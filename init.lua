@@ -18,14 +18,6 @@ minetest.register_chatcommand("list", {
 	end,
 })
 
-minetest.register_chatcommand("sand", {
-	params = "",
-	description = "",
-	privs = {privs=true},
-	func = function(name, param)
-		print(minetest.get_server_status())
-	end,
-})
 -- !!! EVENTS !!! --
 minetest.register_on_joinplayer( function(player)
 	minetest.after( 2.0, function(param)
