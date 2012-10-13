@@ -1,5 +1,4 @@
-dofile("../mods/minetest/redsand/conf.lua")
-
+dofile(minetest.get_modpath("redsand").."/conf.lua")
 -- !!! COMMANDS !!! ---
 --[[ List function. ]]--
 minetest.register_chatcommand("list", {
