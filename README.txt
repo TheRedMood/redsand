@@ -7,9 +7,9 @@ but rather add more chat commands and so on.
 ====
 FEATURES
 ====
-- Death messages
+- Event messages( Respawn, death...)
 - MOTD
-- 
+- A lot of config options.
 
 COMMANDS
 ========
