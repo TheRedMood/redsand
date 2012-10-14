@@ -1,10 +1,17 @@
+-- Care about small and BIG letters?
+careLetters = true
+
 -- List command
 useList = true
-listprivs = {shout=true}
+listprivs = {shout = true}
 
 -- Kill command
 useKill = true
-killprivs = {shout=true}
+killprivs = {shout = true}
+
+-- MSG command
+useMSG = true
+msgprivs = {shout = true}
 
 --MOTD
 useMOTD = true

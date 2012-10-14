@@ -7,15 +7,25 @@ function get_player_obj (name)
 	goodname = string.match(name, "^([^ ]+) *$")
 	if goodname == nil then
 		print("ERROR!")
-		return
+		return nil
 	end
 
+	-- Looping trough all the players currently online
 	for _,player in ipairs(minetest.get_connected_players()) do
-			local name = player:get_player_name()
+		local name = player:get_player_name()
+
+		-- Caring about letters or not?
+		if not careLetters then
+			if string.lower(name) == string.lower(goodname) then
+				return player
+			end
+		else
 			if name == goodname then
 				return player
 			end
+		end
 	end
+	return nil
 end
 
 -- !!! COMMANDS !!! ---
@@ -48,6 +58,34 @@ if useKill then
 		func = function(name, param)
 			local player = get_player_obj(name)
 			player:set_hp(0.0)
+		end,
+	})
+end
+
+--[[ MSG command ]]---
+if useMSG then
+	minetest.register_chatcommand("msg", {
+		params = "<target> <text>",
+		description = "Talk to someone!",
+		privs = msgprivs,
+		func = function(name, param)
+			if string.match(param, "([^ ]+) (.+)") == nil then
+				minetest.chat_send_player(name, "Missing parameters")
+				return
+			end
+
+			-- Generating the variables out of the parameters
+			local targetName, msg = string.match(param, "([^ ]+) (.+)")
+			target = get_player_obj(targetName)
+
+			-- Checking if the target exists
+			if not target then
+				minetest.chat_send_player(name, "The target was not found")
+				return
+			end
+
+			-- Sending the message
+			minetest.chat_send_player(target:get_player_name(), string.format("From %s: %s", name, msg))
 		end,
 	})
 end
