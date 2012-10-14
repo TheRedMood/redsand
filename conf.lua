@@ -1,5 +1,10 @@
 -- List command
+useList = true
 listprivs = {shout=true}
+
+-- Kill command
+useKill = true
+killprivs = {shout=true}
 
 --MOTD
 useMOTD = true
