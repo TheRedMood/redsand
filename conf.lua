@@ -1,5 +1,5 @@
 -- List command
-listprivs = {privs=true}
+listprivs = {shout=true}
 
 --MOTD
 useMOTD = true
