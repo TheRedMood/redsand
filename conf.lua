@@ -23,4 +23,4 @@ DEATH_MSG = "%s left this world :("
 
 -- Revive message
 useReviveMSG = true
-REVIVE_MSG = "Like an phonix %s raises from the ashes."
+REVIVE_MSG = "Like a Phonix %s rises from the ashes."
