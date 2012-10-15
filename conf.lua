@@ -1,6 +1,6 @@
 --[[ What do you want to be loaded? ]]--
 useList     = true -- List command
-useMSG      = true -- MSG command
+useMSG      = true -- Message command
 useKill     = true -- Kill command
 useReply    = true -- Reply command
 
@@ -14,7 +14,7 @@ careLetters = true -- Care about small and BIG letters?
 --[[ Privleges ]]--
 listprivs   = {shout = true}        -- List privleges
 killprivs   = {shout = true}        -- kill privleges
-msgprivs    = {shout = true}        -- msg privleges
+msgprivs    = {shout = true}        -- message privleges
 replyprivs  = {shout = true}        -- reply privleges
 
 --[[ Message strings ]]--
