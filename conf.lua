@@ -20,7 +20,7 @@ replyprivs  = {shout = true}        -- reply privleges
 --[[ Message strings ]]--
 MOTD        = "Welcome %s! This is the default MOTD."       -- Message of the day
 DEATH_MSG   = "%s left this world :("                       -- Death message
-REVIVE_MSG  = "Like a Phonix %s rises from the ashes."      -- Revive message
+REVIVE_MSG  = "Like a Phoenix %s rises from the ashes."      -- Revive message
 
 --[[ What do you want after the / ]]--
 listcmd     = "list"
