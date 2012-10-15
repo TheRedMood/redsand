@@ -1,11 +1,10 @@
 --[[ What do you want to be loaded? ]]--
+useList     = true -- List command
+useMSG      = true -- MSG command
+useKill     = true -- Kill command
+useReply    = true -- Reply command
 
-useList 	= true -- List command
-useMSG 		= true -- MSG command
-useKill 	= true -- Kill command
-useReply 	= true -- Reply command
-
-useMOTD 	 = true -- Message of the day
+useMOTD      = true -- Message of the day
 useDeathMSG  = true -- Death messages
 useReviveMSG = true -- Revive messages
 
@@ -13,18 +12,18 @@ useReviveMSG = true -- Revive messages
 careLetters = true -- Care about small and BIG letters?
 
 --[[ Privleges ]]--
-listprivs 	= {shout = true}		-- List privleges
-killprivs 	= {shout = true}		-- kill privleges
-msgprivs 	= {shout = true}		-- msg privleges
-replyprivs 	= {shout = true}		-- reply privleges
+listprivs   = {shout = true}        -- List privleges
+killprivs   = {shout = true}        -- kill privleges
+msgprivs    = {shout = true}        -- msg privleges
+replyprivs  = {shout = true}        -- reply privleges
 
 --[[ Message strings ]]--
-MOTD 		= "Welcome %s! This is the default MOTD."		-- Message of the day
-DEATH_MSG 	= "%s left this world :(" 						-- Death message
-REVIVE_MSG 	= "Like a Phonix %s rises from the ashes."		-- Revive message
+MOTD        = "Welcome %s! This is the default MOTD."       -- Message of the day
+DEATH_MSG   = "%s left this world :("                       -- Death message
+REVIVE_MSG  = "Like a Phonix %s rises from the ashes."      -- Revive message
 
 --[[ What do you want after the / ]]--
-listcmd	 	= "list"
-msgcmd 		= "msg"
-killcmd 	= "kill"
-replycmd 	= "reply"
+listcmd     = "list"
+msgcmd      = "msg"
+killcmd     = "kill"
+replycmd    = "reply"
