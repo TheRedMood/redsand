@@ -1,4 +1,5 @@
 dofile(minetest.get_modpath("redsand").."/conf.lua")
+lastspoke = {}
 
 -- !!! FUNCTIONS !!! --
 
@@ -32,7 +33,7 @@ end
 
 --[[ List function. ]]--
 if useList then
-	minetest.register_chatcommand("list", {
+	minetest.register_chatcommand(listcmd, {
 		params = "", -- short parameter description
 		description = "List connected players", -- full description
 		privs = listprivs, -- require the "privs" privilege to run
@@ -51,7 +52,7 @@ end
 
 --[[ Kill command ]]---
 if useKill then
-	minetest.register_chatcommand("kill", {
+	minetest.register_chatcommand(killcmd, {
 		params = "",
 		description = "Kills you :(",
 		privs = killprivs,
@@ -64,7 +65,7 @@ end
 
 --[[ MSG command ]]---
 if useMSG then
-	minetest.register_chatcommand("msg", {
+	minetest.register_chatcommand(msgcmd, {
 		params = "<target> <text>",
 		description = "Talk to someone!",
 		privs = msgprivs,
@@ -86,9 +87,37 @@ if useMSG then
 
 			-- Sending the message
 			minetest.chat_send_player(target:get_player_name(), string.format("From %s: %s", name, msg))
+			-- Register the chat in the target persons lastspoke tabler
+			lastspoke[target:get_player_name()] = name
 		end,
 	})
 end
+
+--[[ REPLY command]] --
+if useReply then
+	minetest.register_chatcommand(replycmd, {
+	params = "<text>",
+	description = "Reply the last peron that messaged you.",
+	privs = replyprivs,
+	func = function(name, param)
+		-- We need to get the target
+		target = lastspoke[name]
+		
+		-- Make sure I don't crash the server.
+		if not target then
+			minetest.chat_send_player(name, "No one has spoke to you :(")
+		elseif param == "" then
+			minetest.chat_send_player(name, "You need to say something.")
+		else
+			-- We need to send the message and update the targets lastspoke[] status.
+			minetest.chat_send_player(target, string.format("From %s: %s", name, param))
+			lastspoke[target] = name
+		end
+	end,
+	})
+end
+
+
 -- !!! EVENTS !!! --
 
 --[[ What happens when a player joins? ]]--

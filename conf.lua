@@ -1,26 +1,30 @@
--- Care about small and BIG letters?
-careLetters = true
+--[[ What do you want to be loaded? ]]--
 
--- List command
-useList = true
-listprivs = {shout = true}
+useList 	= true -- List command
+useMSG 		= true -- MSG command
+useKill 	= true -- Kill command
+useReply 	= true -- Reply command
 
--- Kill command
-useKill = true
-killprivs = {shout = true}
+useMOTD 	 = true -- Message of the day
+useDeathMSG  = true -- Death messages
+useReviveMSG = true -- Revive messages
 
--- MSG command
-useMSG = true
-msgprivs = {shout = true}
+--[[ GLOBAL OPTIONS ]]--
+careLetters = true -- Care about small and BIG letters?
 
---MOTD
-useMOTD = true
-MOTD = "Welcome %s! This is the default MOTD."
+--[[ Privleges ]]--
+listprivs 	= {shout = true}		-- List privleges
+killprivs 	= {shout = true}		-- kill privleges
+msgprivs 	= {shout = true}		-- msg privleges
+replyprivs 	= {shout = true}		-- reply privleges
 
--- Death message
-useDeathMSG = true
-DEATH_MSG = "%s left this world :("
+--[[ Message strings ]]--
+MOTD 		= "Welcome %s! This is the default MOTD."		-- Message of the day
+DEATH_MSG 	= "%s left this world :(" 						-- Death message
+REVIVE_MSG 	= "Like a Phonix %s rises from the ashes."		-- Revive message
 
--- Revive message
-useReviveMSG = true
-REVIVE_MSG = "Like a Phonix %s rises from the ashes."
+--[[ What do you want after the / ]]--
+listcmd	 	= "list"
+msgcmd 		= "msg"
+killcmd 	= "kill"
+replycmd 	= "reply"
