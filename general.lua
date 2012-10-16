@@ -3,7 +3,7 @@
 -- !!! COMMANDS !!! --
 --[[ List function. ]]--
 if useList then
-    minetest.register_chatcommand(listcmd, {
+	minetest.register_chatcommand(listcmd, {
         params = "", -- short parameter description
         description = "List connected players", -- full description
         privs = listprivs, -- require the "privs" privilege to run

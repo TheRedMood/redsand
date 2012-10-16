@@ -9,3 +9,6 @@ dofile(minetest.get_modpath("redsand").."/functions.lua")
 dofile(minetest.get_modpath("redsand").."/messages.lua")
 dofile(minetest.get_modpath("redsand").."/events.lua")
 dofile(minetest.get_modpath("redsand").."/general.lua")
+
+-- Load the aliases
+dofile(minetest.get_modpath("redsand").."/aliases.lua")

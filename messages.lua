@@ -43,7 +43,7 @@ if useReply then
 
         -- Make sure I don't crash the server.
         if not target then
-            minetest.chat_send_player(name, "No one has spoke to you :(")
+            minetest.chat_send_player(name, "No one has spoken to you :(")
         elseif param == "" then
             minetest.chat_send_player(name, "You need to say something.")
         else
